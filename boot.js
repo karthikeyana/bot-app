@@ -2,16 +2,15 @@
 const BootBot = require('bootbot');
 
 const bot = new BootBot({
-  accessToken: 'EAABvKd6SnwYBALjDBz8aAatOQs2D4iVbQRcncoYnOP1fp7rRgt4vmaMyS9kR7YasLrQISiRV32RDxJYaXdcmPTKuSgXmHwUcVX6Qz2nQ2ZBSZCK3XZCZBDon7lW57Gf33FFaZAUeAZAru6I6p6QF1lXiu1Ty4qkepQVMMvOgjilVRhB6YZAE9ao',
-  verifyToken: 'my_token',
-  appSecret: '150ea43ca0dce9c3071fb8f4d900b0f5'
+  accessToken: '',
+  verifyToken: '',
+  appSecret: ''
 });
 
 bot.on('message', (payload, chat) => {
   const text = payload.message.text;
   chat.say(`Echo: ${text}`);
 });
-
 
 bot.hear(['hello', 'hi', /hey( there)?/i], (payload, chat) => {
 	chat.say('Hello, human friend!').then(() => {
